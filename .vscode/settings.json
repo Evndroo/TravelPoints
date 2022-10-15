@@ -1,0 +1,8 @@
+{
+	"cSpell.words": [
+		"esnext"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	}
+}

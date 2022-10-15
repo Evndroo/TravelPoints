@@ -1,7 +1,7 @@
 {
 	"env": {
 		"browser": true,
-		"es2021": true
+		"es2020": true
 	},
 	"settings": {
 		"react": {
@@ -11,12 +11,16 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:react/recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended"
 	],
-	"overrides": [],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
-		"ecmaVersion": "latest",
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 11,
 		"sourceType": "module"
 	},
 	"plugins": [
