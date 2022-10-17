@@ -9,7 +9,11 @@ const config = {
 	testPathIgnorePatterns: ['/node_modules/', '/.next/'],
 	collectCoverage: true,
 	collectCoverageFrom: ['src/**/*.ts(x)'],
-	setupFilesAfterEnv: ['<rootDir>/tests/setup.ts']
+	setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
+	moduleNameMapper: {
+		'@/tests/(.*)': '<rootDir>/tests/$1',
+		'@/(.*)': '<rootDir>/src/$1'
+	}
 }
 
 module.exports = config
