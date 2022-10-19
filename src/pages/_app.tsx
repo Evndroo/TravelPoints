@@ -10,6 +10,8 @@ function App({ Component, pageProps }: AppProps) {
 				<title>My trips</title>
 				<link rel="shortcut icon" href="/img/icon-512.png" />
 				<link rel="apple-touch-icon" href="/img/icon-192.png" />
+				<link rel="manifest" href="/manifest.json" />
+				<meta name="theme-color" content="#06092B" />
 				<meta
 					name="description"
 					content="Just some places that I know or want to know"

@@ -1,6 +1,7 @@
 {
 	"cSpell.words": [
-		"esnext"
+		"esnext",
+		"fullscreen"
 	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
