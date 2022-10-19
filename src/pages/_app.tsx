@@ -16,6 +16,12 @@ function App({ Component, pageProps }: AppProps) {
 					name="description"
 					content="Just some places that I know or want to know"
 				/>
+				<link
+					rel="stylesheet"
+					href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+					integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+					crossOrigin=""
+				/>
 			</Head>
 			<GlobalStyles></GlobalStyles>
 			<Component {...pageProps} />
