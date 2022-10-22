@@ -1,7 +1,24 @@
 import { LatLngExpression } from 'leaflet'
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import React from 'react'
+import { MapContainer, Marker, TileLayer } from 'react-leaflet'
 
-const Map = () => {
+type Place = {
+	id: string
+	name: string
+	slug: string
+	location: {
+		latitude: number
+		longitude: number
+	}
+}
+
+type Props = {
+	places?: Place[]
+}
+
+const Map: React.FC<Props> = (props) => {
+	const { places } = props
+
 	const position: LatLngExpression = [0, 0]
 
 	return (
@@ -14,11 +31,18 @@ const Map = () => {
 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 			/>
-			<Marker position={position}>
-				<Popup>
-					A pretty CSS3 popup. <br /> Easily customizable.
-				</Popup>
-			</Marker>
+
+			{places?.map((place) => {
+				const { latitude, longitude } = place.location
+
+				return (
+					<Marker
+						position={[latitude, longitude]}
+						title={place.name}
+						key={`place-${place.id}`}
+					/>
+				)
+			})}
 		</MapContainer>
 	)
 }
