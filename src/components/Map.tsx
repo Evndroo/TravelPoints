@@ -1,5 +1,4 @@
 import { LatLngExpression } from 'leaflet'
-import React from 'react'
 import { MapContainer, Marker, TileLayer } from 'react-leaflet'
 
 type Place = {
