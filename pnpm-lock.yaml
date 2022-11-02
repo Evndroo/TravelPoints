@@ -30,7 +30,7 @@ specifiers:
   prettier: ^2.5.1
   react: 18.2.0
   react-dom: 18.2.0
-  react-leaflet: 3.2.5
+  react-leaflet: ^4.0.1
   styled-components: ^5.3.6
   typescript: 4.8.4
   webpack: '4'
@@ -42,7 +42,7 @@ dependencies:
   next-pwa: 5.6.0_next@12.3.1+webpack@4.46.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-leaflet: 3.2.5_77b3072cffa6b0fa9f9e8a3e0a1d3cb1
+  react-leaflet: 4.1.0_77b3072cffa6b0fa9f9e8a3e0a1d3cb1
   styled-components: 5.3.6_react-dom@18.2.0+react@18.2.0
   webpack: 4.46.0
 
@@ -1790,12 +1790,12 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  /@react-leaflet/core/1.1.1_77b3072cffa6b0fa9f9e8a3e0a1d3cb1:
-    resolution: {integrity: sha512-7PGLWa9MZ5x/cWy8EH2VzI4T8q5WpuHbixzCDXqixP/WyqwIrg5NDUPgYuFnB4IEIZF+6nA265mYzswFo/h1Pw==}
+  /@react-leaflet/core/2.1.0_77b3072cffa6b0fa9f9e8a3e0a1d3cb1:
+    resolution: {integrity: sha512-Qk7Pfu8BSarKGqILj4x7bCSZ1pjuAPZ+qmRwH5S7mDS91VSbVVsJSrW4qA+GPrro8t69gFYVMWb1Zc4yFmPiVg==}
     peerDependencies:
-      leaflet: ^1.7.1
-      react: ^17.0.1
-      react-dom: ^17.0.1
+      leaflet: ^1.9.0
+      react: ^18.0.0
+      react-dom: ^18.0.0
     dependencies:
       leaflet: 1.7.1
       react: 18.2.0
@@ -6782,14 +6782,14 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
 
-  /react-leaflet/3.2.5_77b3072cffa6b0fa9f9e8a3e0a1d3cb1:
-    resolution: {integrity: sha512-Z3KZ+4SijsRbbrt2I1a3ZDY6+V6Pm91eYTdxTN18G6IOkFRsJo1BuSPLFnyFrlF3WDjQFPEcTPkEgD1VEeAoBg==}
+  /react-leaflet/4.1.0_77b3072cffa6b0fa9f9e8a3e0a1d3cb1:
+    resolution: {integrity: sha512-i+V9pX5lywJ48O2+K3USeeTdYLIhxnLMweH+YLd/UPqVIj3uKzE3Q29bzt83PBtViyZmxDlulzC6uoR3JLiE9A==}
     peerDependencies:
-      leaflet: ^1.7.1
-      react: ^17.0.1
-      react-dom: ^17.0.1
+      leaflet: ^1.9.0
+      react: ^18.0.0
+      react-dom: ^18.0.0
     dependencies:
-      '@react-leaflet/core': 1.1.1_77b3072cffa6b0fa9f9e8a3e0a1d3cb1
+      '@react-leaflet/core': 2.1.0_77b3072cffa6b0fa9f9e8a3e0a1d3cb1
       leaflet: 1.7.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
