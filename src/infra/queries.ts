@@ -13,17 +13,6 @@ export const GET_PAGES = gql`
 	}
 `
 
-export type GetPagesReturn = {
-	pages: {
-		id: string
-		slug: string
-		title: string
-		body: {
-			html: string
-		}
-	}[]
-}
-
 export const GET_PAGE_BY_SLUG = gql`
 	query GetPageBySlug($slug: String!) {
 		page(where: { slug: $slug }) {
@@ -34,12 +23,3 @@ export const GET_PAGE_BY_SLUG = gql`
 		}
 	}
 `
-
-export type GetPageBySlugReturn = {
-	page: {
-		title: string
-		body: {
-			html: string
-		}
-	}
-}
