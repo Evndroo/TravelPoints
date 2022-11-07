@@ -8,7 +8,7 @@
 		"start": "next start",
 		"test": "jest --passWithNoTests",
 		"test:watch": "jest --passWithNoTests --watch",
-		"lint": "eslint src --fix --max-warnings=0",
+		"lint": "eslint \"src\" --fix --max-warnings=0",
 		"postinstall": "husky install",
 		"codegen": "graphql-codegen --config codegen.ts"
 	},
