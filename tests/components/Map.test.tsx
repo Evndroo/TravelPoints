@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import { Map } from '@/components';
+import { Map } from '@/components'
 
 describe('<Map/>', () => {
 	it('should render without any marker', () => {
