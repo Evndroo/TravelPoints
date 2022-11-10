@@ -60,8 +60,6 @@ export default function Place(place: PlaceProps) {
 
 	if (router.isFallback) return <h3>Loading...</h3>
 
-	console.log(place)
-
 	return (
 		<Root>
 			<LinkWrapper href="/">

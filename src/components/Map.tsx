@@ -1,4 +1,5 @@
 import { LatLngExpression } from 'leaflet'
+import { useRouter } from 'next/router'
 import { MapContainer, Marker, TileLayer } from 'react-leaflet'
 
 type Place = {
@@ -17,7 +18,7 @@ export type MapProps = {
 
 const Map: React.FC<MapProps> = (props) => {
 	const { places } = props
-
+	const router = useRouter()
 	const position: LatLngExpression = [0, 0]
 
 	return (
@@ -39,6 +40,11 @@ const Map: React.FC<MapProps> = (props) => {
 						position={[latitude, longitude]}
 						title={place.name}
 						key={`place-${place.id}`}
+						eventHandlers={{
+							click: () => {
+								router.push(`/place/${place.slug}`)
+							}
+						}}
 					/>
 				)
 			})}
