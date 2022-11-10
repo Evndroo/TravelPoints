@@ -1,21 +1,23 @@
+import { GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
-import { InfoOutline } from '@styled-icons/evaicons-outline/InfoOutline'
 
-const Map = dynamic(() => import('../components/Map'), {
-	ssr: false
-})
+import { MapProps } from '@/components/Map'
+import client from '@/infra/GraphQlClient'
+import { GET_PLACES } from '@/infra/queries'
+import type { GetPlacesQuery } from '@/infra/generated/graphql'
 
-const LinkWrapper = dynamic(() => import('../components/LinkWrapper'), {
-	ssr: false
-})
+const HomeTemplate = dynamic(import('../components/HomeTemplate'))
 
-export default function Home() {
-	return (
-		<>
-			<LinkWrapper href="/about">
-				<InfoOutline size={32} aria-label="About" />
-			</LinkWrapper>
-			<Map />
-		</>
-	)
+export default function Home({ places }: MapProps) {
+	return <HomeTemplate places={places} />
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+	const { places } = await client.request<GetPlacesQuery>(GET_PLACES)
+
+	return {
+		props: {
+			places
+		}
+	}
 }

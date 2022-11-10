@@ -11,11 +11,11 @@ type Place = {
 	}
 }
 
-type Props = {
+export type MapProps = {
 	places?: Place[]
 }
 
-const Map: React.FC<Props> = (props) => {
+const Map: React.FC<MapProps> = (props) => {
 	const { places } = props
 
 	const position: LatLngExpression = [0, 0]

@@ -23,3 +23,24 @@ export const GET_PAGE_BY_SLUG = gql`
 		}
 	}
 `
+
+export const GET_PLACES = gql`
+	query GetPlaces {
+		places {
+			slug
+			name
+			location {
+				latitude
+				longitude
+			}
+			description {
+				html
+			}
+			gallery {
+				height
+				width
+				url
+			}
+		}
+	}
+`
