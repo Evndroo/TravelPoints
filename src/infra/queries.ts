@@ -25,8 +25,8 @@ export const GET_PAGE_BY_SLUG = gql`
 `
 
 export const GET_PLACES = gql`
-	query GetPlaces {
-		places {
+	query GetPlaces($first: Int) {
+		places(first: $first) {
 			slug
 			name
 			location {
@@ -40,6 +40,22 @@ export const GET_PLACES = gql`
 				height
 				width
 				url
+			}
+		}
+	}
+`
+
+export const GET_PLACE_BY_SLUG = gql`
+	query GetPlaceBySlug($slug: String!) {
+		place(where: { slug: $slug }) {
+			name
+			description {
+				html
+			}
+			gallery {
+				height
+				url
+				width
 			}
 		}
 	}
