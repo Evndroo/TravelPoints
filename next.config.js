@@ -9,5 +9,8 @@ const withPWA = require('next-pwa')({
 
 module.exports = withPWA({
 	reactStrictMode: true,
-	swcMinify: true
+	swcMinify: true,
+	images: {
+		domains: ['media.graphassets.com']
+	}
 })

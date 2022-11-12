@@ -20,6 +20,7 @@ import type {
 	Place as PlaceProps
 } from '@/infra/generated/graphql'
 import { GET_PLACE_BY_SLUG, GET_PLACES } from '@/infra/queries'
+import Image from 'next/image'
 
 const Root = styled.div`
 	padding: var(--large) var(--medium);
@@ -64,8 +65,24 @@ const Gallery = styled.div`
 	margin-top: var(--medium);
 
 	img {
-		width: 100%;
-		margin: auto;
+		background: #f6f7f8;
+		background-image: linear-gradient(
+			to right,
+			#f6f7f8 0%,
+			#edeef1 20%,
+			#f6f7f8 40%,
+			#f6f7f8 100%
+		);
+		background-size: 80rem 14rem;
+		animation: placeholderShimmer 1s linear infinite forwards;
+		@keyframes placeholderShimmer {
+			0% {
+				background-position: -40rem 0;
+			}
+			100% {
+				background-position: 40rem 0;
+			}
+		}
 	}
 `
 
@@ -88,7 +105,17 @@ export default function Place(place: PlaceProps) {
 				<Subtitle>Algumas imagens do local</Subtitle>
 				<Gallery>
 					{place.gallery.map((image, index) => (
-						<img key={index} src={image.url} alt="" aria-hidden />
+						<>
+							<Image
+								key={index}
+								src={image.url}
+								quality={75}
+								width={1000}
+								height={600}
+								alt=""
+								aria-hidden
+							/>
+						</>
 					))}
 				</Gallery>
 			</Container>
