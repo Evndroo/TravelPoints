@@ -22,17 +22,18 @@ import type {
 import { GET_PLACE_BY_SLUG, GET_PLACES } from '@/infra/queries'
 
 const Root = styled.div`
-	text-align: center;
-	display: flex;
-	flex-direction: column;
+	padding: var(--large) var(--medium);
+`
+
+const Container = styled.section`
 	max-width: var(--container);
+	padding-bottom: var(--large);
 	margin: auto;
 `
 
-const Heading = styled.div`
+const Heading = styled.h1`
 	font-size: var(--large);
 	margin-bottom: var(--medium);
-	text-transform: capitalize;
 `
 
 const Subtitle = styled.h2`
@@ -40,9 +41,11 @@ const Subtitle = styled.h2`
 `
 
 const Body = styled.div`
+	margin-bottom: var(--large);
 	p {
 		font-size: 1.5rem;
-		line-height: var(--small);
+		line-height: 2rem;
+		margin-bottom: var(--small);
 	}
 	h3 {
 		margin: var(--small) 0;
@@ -55,6 +58,17 @@ const Body = styled.div`
 	}
 `
 
+const Gallery = styled.div`
+	display: grid;
+	grid-gap: var(--medium);
+	margin-top: var(--medium);
+
+	img {
+		width: 100%;
+		margin: auto;
+	}
+`
+
 export default function Place(place: PlaceProps) {
 	const router = useRouter()
 
@@ -62,17 +76,22 @@ export default function Place(place: PlaceProps) {
 
 	return (
 		<Root>
-			<LinkWrapper href="/">
-				<CloseOutline size={32} aria-label="Close" />
-			</LinkWrapper>
-			<Heading>{place.name}</Heading>
-			<Body
-				dangerouslySetInnerHTML={{ __html: place.description?.html || '' }}
-			/>
-			<Subtitle>Algumas imagens do local</Subtitle>
-			{place.gallery.map((image, index) => (
-				<img key={index} src={image.url} alt="" aria-hidden />
-			))}
+			<Container>
+				<LinkWrapper href="/">
+					<CloseOutline size={32} aria-label="Close" />
+				</LinkWrapper>
+				<Heading>{place.name}</Heading>
+
+				<Body
+					dangerouslySetInnerHTML={{ __html: place.description?.html || '' }}
+				/>
+				<Subtitle>Algumas imagens do local</Subtitle>
+				<Gallery>
+					{place.gallery.map((image, index) => (
+						<img key={index} src={image.url} alt="" aria-hidden />
+					))}
+				</Gallery>
+			</Container>
 		</Root>
 	)
 }
