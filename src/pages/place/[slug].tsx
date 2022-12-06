@@ -89,7 +89,7 @@ const Gallery = styled.div`
 export default function Place(place: PlaceProps) {
 	const router = useRouter()
 
-	if (router.isFallback) return <h3>Loading...</h3>
+	if (router.isFallback) return <h3>Carregando...</h3>
 
 	return (
 		<Root>
@@ -105,17 +105,15 @@ export default function Place(place: PlaceProps) {
 				<Subtitle>Algumas imagens do local</Subtitle>
 				<Gallery>
 					{place.gallery.map((image, index) => (
-						<>
-							<Image
-								key={index}
-								src={image.url}
-								quality={75}
-								width={1000}
-								height={600}
-								alt=""
-								aria-hidden
-							/>
-						</>
+						<Image
+							key={index}
+							src={image.url}
+							quality={75}
+							width={1000}
+							height={600}
+							alt=""
+							aria-hidden
+						/>
 					))}
 				</Gallery>
 			</Container>
